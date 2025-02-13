@@ -1,6 +1,10 @@
 # Use the official Ubuntu 22.04 LTS as the base image
 FROM ubuntu:22.04
 
+# Change the curl port from 5000(default) to 5002
+
+ENV PORT='5002'
+ 
 # Set the working directory inside the container
 WORKDIR /app
 
@@ -20,7 +24,15 @@ RUN pip install flask
 # Make port 5000 available to the world outside this container
 # Note that this is for the purposes of documentation
 # The port is actually exposed when you run the container from the command line
-EXPOSE 5000
+# Now changed to 5002. ENV PORT variable above.
+EXPOSE $PORT
+
+# Health check (checks every 30 seconds to see if the endpoint 
+# returns a successful response)
+
+HEALTHCHECK --interval=30s --timeout=3s \
+
+CMD curl -f http://localhost:${PORT}/healthcheck || exit 1
 
 # Run app.py when the container launches
 CMD ["python3", "app.py"]
