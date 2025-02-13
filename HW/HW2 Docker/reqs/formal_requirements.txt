@@ -1,0 +1,30 @@
+Formal Requirements for SnickerSync
+
+Goal:
+- Provide an engaging and effective diff tool that enhances collaboration by integrating humor-based syncing into the version control process.
+
+Non-Goal:
+- Support for non-GiggleGit repositories or standalone version control systems.
+
+Non-Functional Requirements:
+1. Security & Access Control
+   - Different user roles (PMs, developers, testers) should have distinct levels of access to SnickerSync's settings and data.
+
+2. Randomized User Study Assignment
+   - Users participating in SnickerSync studies should be randomly assigned to control and test groups to ensure unbiased results.
+
+Functional Requirements:
+
+For Security & Access Control:
+1. Role-Based Access Control (RBAC) Implementation
+   - Users should be assigned roles with predefined permissions (e.g., PMs can modify snickering concepts, developers cannot).
+
+2. Audit Logs for SnickerSync Modifications
+   - All changes to SnickerSync configurations should be logged, including timestamps and user identifiers.
+
+For Randomized User Study Assignment:
+3. Automated Random Group Assignment
+   - A system should automatically assign users to either the control or variant group upon enrollment in a study.
+
+4. User Study Metrics Logging
+   - Track and store user interactions, including time spent reviewing diffs and frequency of use, for later analysis.
